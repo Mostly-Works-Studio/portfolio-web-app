@@ -54,7 +54,7 @@ export function StudioPortfolio() {
         </div>
 
         <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter">
-          {studioData.studio.name.split(" ").slice(0, 2).join(" ")} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">{studioData.studio.name.split(" ")[2]}</span>
+          {studioData.studio.name.split(" ").slice(0, 2).join(" ")} <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 pr-1">{studioData.studio.name.split(" ")[2]}</span>
         </h1>
 
         <p className="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto font-light leading-relaxed mb-10">
