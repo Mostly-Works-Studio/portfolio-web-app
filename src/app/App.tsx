@@ -6,7 +6,7 @@ import { PersonaSwitch } from "./components/PersonaSwitch";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-indigo-500/30">
         {/* Global Animated Background */}
         <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
