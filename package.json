@@ -75,7 +75,8 @@
     "vite": "6.3.5"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.28.1"
+    "@rollup/rollup-linux-x64-gnu": "^4.28.1",
+    "lightningcss-linux-x64-gnu": "^1.28.3"
   },
   "peerDependencies": {
     "react": "18.3.1",
