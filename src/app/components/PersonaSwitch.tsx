@@ -2,18 +2,22 @@ import { motion } from "motion/react";
 import { User, Rocket } from "lucide-react";
 import { clsx } from "clsx";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 export function PersonaSwitch() {
   const navigate = useNavigate();
   const location = useLocation();
   const mode = location.pathname === "/studio" ? "studio" : "personal";
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
+
   return (
     <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 p-1 rounded-full bg-zinc-900/20 backdrop-blur-xl border border-white/10 shadow-2xl shadow-indigo-500/10">
       <button
         onClick={() => {
           navigate("/personal");
-          window.scrollTo({ top: 0, behavior: "smooth" });
         }}
         className={clsx(
           "relative flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 z-10",
@@ -36,7 +40,6 @@ export function PersonaSwitch() {
       <button
         onClick={() => {
           navigate("/studio");
-          window.scrollTo({ top: 0, behavior: "smooth" });
         }}
         className={clsx(
           "relative flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 z-10",
