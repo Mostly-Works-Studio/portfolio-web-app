@@ -80,8 +80,8 @@ export function PersonalPortfolio() {
     >
       {/* Hero Section */}
       <motion.div variants={item} className="flex flex-col md:flex-row gap-10 items-center mb-32">
-        <div className="relative group cursor-pointer">
-          <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-500 animate-tilt"></div>
+        <div className="relative">
+          <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 rounded-full blur opacity-100"></div>
           <img
             src={personalData.profile.image}
             alt="Profile"
@@ -251,10 +251,7 @@ export function PersonalPortfolio() {
 
 function SocialButton({ icon, label, href, primary }: { icon: React.ReactNode, label: string, href: string, primary?: boolean }) {
   return (
-    <motion.a
-      whileHover={{ scale: 1.05, y: -2 }}
-      whileTap={{ scale: 0.95 }}
-      transition={{ duration: 0.2, ease: "easeOut" }}
+    <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
@@ -267,7 +264,7 @@ function SocialButton({ icon, label, href, primary }: { icon: React.ReactNode, l
     >
       {icon}
       {label}
-    </motion.a>
+    </a>
   );
 }
 
@@ -309,16 +306,11 @@ function ExperienceItem({ role, company, fromDate, toDate, description }: { role
   const duration = calculateDuration(fromDate, toDate);
 
   return (
-    <motion.div
-      initial={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-      whileHover={{ backgroundColor: "rgba(99, 102, 241, 0.1)" }}
-      transition={{ duration: 0.2, ease: "easeOut" }}
-      className="group p-6 rounded-2xl border border-white/10 hover:border-indigo-500/50 transition-colors backdrop-blur-sm"
-    >
+    <div className="p-6 rounded-2xl border border-white/10 backdrop-blur-sm bg-white/5">
       <div className="flex flex-row items-start justify-between gap-3 mb-3">
         <div className="flex-1 min-w-0">
           <div className="flex items-baseline gap-2 flex-wrap">
-            <h4 className="text-lg font-bold text-white group-hover:text-indigo-300 transition-colors">{role}</h4>
+            <h4 className="text-lg font-bold text-white">{role}</h4>
             <span className="text-xs text-zinc-500">• {duration}</span>
           </div>
           <div className="text-sm font-medium text-zinc-400 mt-1">{company}</div>
@@ -329,6 +321,6 @@ function ExperienceItem({ role, company, fromDate, toDate, description }: { role
       <div className="text-zinc-400 leading-relaxed text-sm whitespace-pre-line">
         {description}
       </div>
-    </motion.div>
+    </div>
   );
 }

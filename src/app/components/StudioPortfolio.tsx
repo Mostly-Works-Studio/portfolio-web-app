@@ -43,8 +43,8 @@ export function StudioPortfolio() {
       {/* Hero Section */}
       <motion.div variants={item} className="text-center mb-32">
         <div className="inline-flex items-center justify-center mb-8">
-          <div className="relative group cursor-pointer">
-            <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-500 animate-tilt"></div>
+          <div className="relative">
+            <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 rounded-full blur opacity-100"></div>
             <img
               src={studioData.studio.logo}
               alt="Mostly Works Studio"
@@ -145,10 +145,7 @@ export function StudioPortfolio() {
 
 function SocialButton({ icon, label, href, primary }: { icon: React.ReactNode, label: string, href: string, primary?: boolean }) {
   return (
-    <motion.a
-      whileHover={{ scale: 1.05, y: -2 }}
-      whileTap={{ scale: 0.95 }}
-      transition={{ duration: 0.2, ease: "easeOut" }}
+    <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
@@ -161,6 +158,6 @@ function SocialButton({ icon, label, href, primary }: { icon: React.ReactNode, l
     >
       {icon}
       {label}
-    </motion.a>
+    </a>
   );
 }
