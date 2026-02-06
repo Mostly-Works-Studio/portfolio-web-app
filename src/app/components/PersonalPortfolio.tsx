@@ -6,17 +6,8 @@ import {
   SiGithub,
   SiLinkedin,
   SiLeetcode,
-  SiReact,
-  SiTypescript,
-  SiNodedotjs,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiPostgresql,
-  SiAmazon,
-  SiDocker,
   SiGraphql,
   SiRedis,
-  SiFigma,
   SiSpringboot,
   SiApachekafka,
   SiCloudflareworkers,
@@ -81,7 +72,7 @@ export function PersonalPortfolio() {
       {/* Hero Section */}
       <motion.div variants={item} className="flex flex-col md:flex-row gap-10 items-center mb-32">
         <div className="relative">
-          <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 rounded-full blur opacity-100"></div>
+          <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 rounded-full blur opacity-75"></div>
           <img
             src={personalData.profile.image}
             alt="Profile"
@@ -171,6 +162,7 @@ export function PersonalPortfolio() {
                 <ExperienceItem
                   key={index}
                   role={exp.role}
+                  shortRole={exp.shortRole}
                   company={exp.company}
                   fromDate={exp.fromDate}
                   toDate={exp.toDate}
@@ -268,7 +260,7 @@ function SocialButton({ icon, label, href, primary }: { icon: React.ReactNode, l
   );
 }
 
-function ExperienceItem({ role, company, fromDate, toDate, description }: { role: string, company: string, fromDate: string, toDate: string | null, description: string }) {
+function ExperienceItem({ role, shortRole, company, fromDate, toDate, description }: { role: string, shortRole: string, company: string, fromDate: string, toDate: string | null, description: string }) {
   // Parse dates in DD/MM/YYYY format
   const parseDate = (dateStr: string) => {
     const [day, month, year] = dateStr.split('/').map(Number);
@@ -310,7 +302,10 @@ function ExperienceItem({ role, company, fromDate, toDate, description }: { role
       <div className="flex flex-row items-start justify-between gap-3 mb-3">
         <div className="flex-1 min-w-0">
           <div className="flex items-baseline gap-2 flex-wrap">
-            <h4 className="text-lg font-bold text-white">{role}</h4>
+            <h4 className="text-lg font-bold text-white">
+              <span className="hidden sm:inline">{role}</span>
+              <span className="sm:hidden">{shortRole}</span>
+            </h4>
             <span className="text-xs text-zinc-500">• {duration}</span>
           </div>
           <div className="text-sm font-medium text-zinc-400 mt-1">{company}</div>

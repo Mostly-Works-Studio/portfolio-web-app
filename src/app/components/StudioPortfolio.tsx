@@ -44,7 +44,7 @@ export function StudioPortfolio() {
       <motion.div variants={item} className="text-center mb-32">
         <div className="inline-flex items-center justify-center mb-8">
           <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 rounded-full blur opacity-100"></div>
+            <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 rounded-full blur opacity-75"></div>
             <img
               src={studioData.studio.logo}
               alt="Mostly Works Studio"

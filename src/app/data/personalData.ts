@@ -24,6 +24,7 @@ export const personalData = {
     experience: [
         {
             role: "Software Development Engineer - 2",
+            shortRole: "SDE-2",
             company: "Groww",
             fromDate: "01/04/2025",
             toDate: null,
@@ -31,6 +32,7 @@ export const personalData = {
         },
         {
             role: "Software Development Engineer - 1",
+            shortRole: "SDE-1",
             company: "Groww",
             fromDate: "05/06/2023",
             toDate: "31/03/2025",
@@ -38,6 +40,7 @@ export const personalData = {
         },
         {
             role: "Software Development Intern",
+            shortRole: "SDE Intern",
             company: "Groww",
             fromDate: "02/01/2023",
             toDate: "02/06/2023",
@@ -45,6 +48,7 @@ export const personalData = {
         },
         {
             role: "Software Development Intern",
+            shortRole: "SDE Intern",
             company: "Groww",
             fromDate: "11/05/2022",
             toDate: "29/07/2022",
