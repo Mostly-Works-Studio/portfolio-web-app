@@ -1,5 +1,6 @@
 import { motion, Variants } from "motion/react";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { clsx } from "clsx";
 import { Mail, Heart, Monitor, Smartphone, Layers } from "lucide-react";
 import { SiGithub, SiGoogleplay, SiLinkedin } from "react-icons/si";
@@ -34,13 +35,25 @@ export function StudioPortfolio() {
   }, []);
 
   return (
-    <motion.div
-      variants={container}
-      initial="hidden"
-      animate="show"
-      className="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24 pb-24 sm:pb-32"
-    >
-      {/* Hero Section */}
+    <>
+      <Helmet>
+        <title>{studioData.studio.name} - Digital Product Studio</title>
+        <meta name="description" content={`${studioData.studio.tagline}. ${studioData.about} Explore our web and mobile projects.`} />
+        <meta property="og:title" content={`${studioData.studio.name} - Digital Product Studio`} />
+        <meta property="og:description" content={`${studioData.studio.tagline}. ${studioData.about} Explore our web and mobile projects.`} />
+        <meta property="og:url" content="https://panshul.dev/studio" />
+        <meta property="og:image" content="https://panshul.dev/images/studio-logo.jpg" />
+        <meta property="twitter:title" content={`${studioData.studio.name} - Digital Product Studio`} />
+        <meta property="twitter:description" content={`${studioData.studio.tagline}. ${studioData.about} Explore our web and mobile projects.`} />
+        <link rel="canonical" href="https://panshul.dev/studio" />
+      </Helmet>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24 pb-24 sm:pb-32"
+      >
+        {/* Hero Section */}
       <motion.div variants={item} className="text-center mb-16 md:mb-32">
         <div className="inline-flex items-center justify-center mb-8">
           <div className="relative">
@@ -140,6 +153,7 @@ export function StudioPortfolio() {
         </p>
       </motion.footer>
     </motion.div>
+    </>
   );
 }
 

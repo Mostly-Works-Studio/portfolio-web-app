@@ -1,11 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { PersonalPortfolio } from "./components/PersonalPortfolio";
 import { StudioPortfolio } from "./components/StudioPortfolio";
 import { PersonaSwitch } from "./components/PersonaSwitch";
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HelmetProvider>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-indigo-500/30 relative overflow-hidden">
         {/* Static gradient background - lightweight alternative to animated blurs */}
         <div className="fixed inset-0 z-0 pointer-events-none">
@@ -27,6 +29,7 @@ function App() {
         <PersonaSwitch />
       </div>
     </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

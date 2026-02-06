@@ -1,5 +1,6 @@
 import { motion, Variants } from "motion/react";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { clsx } from "clsx";
 import { Mail, MapPin, Cpu, BriefcaseBusiness, GraduationCap, Milestone, Heart, Building2, UserRound, ChevronDown, ChevronUp } from "lucide-react";
 import {
@@ -63,13 +64,24 @@ export function PersonalPortfolio() {
   }, []);
 
   return (
-    <motion.div
-      variants={container}
-      initial="hidden"
-      animate="show"
-      className="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24 pb-24 sm:pb-32"
-    >
-      {/* Hero Section */}
+    <>
+      <Helmet>
+        <title>{personalData.profile.name} - Software Engineer | Personal Portfolio</title>
+        <meta name="description" content={`${personalData.about} Explore my experience at ${personalData.contact.company} and technical expertise.`} />
+        <meta property="og:title" content={`${personalData.profile.name} - Software Engineer | Personal Portfolio`} />
+        <meta property="og:description" content={`${personalData.about} Explore my experience at ${personalData.contact.company} and technical expertise.`} />
+        <meta property="og:url" content="https://panshul.dev/personal" />
+        <meta property="twitter:title" content={`${personalData.profile.name} - Software Engineer | Personal Portfolio`} />
+        <meta property="twitter:description" content={`${personalData.about} Explore my experience at ${personalData.contact.company} and technical expertise.`} />
+        <link rel="canonical" href="https://panshul.dev/personal" />
+      </Helmet>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24 pb-24 sm:pb-32"
+      >
+        {/* Hero Section */}
       <motion.div variants={item} className="flex flex-col md:flex-row gap-10 items-center mb-16 md:mb-32">
         <div className="relative">
           <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 rounded-full blur opacity-75"></div>
@@ -238,6 +250,7 @@ export function PersonalPortfolio() {
         </p>
       </motion.footer>
     </motion.div>
+    </>
   );
 }
 
