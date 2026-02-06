@@ -6,7 +6,16 @@ import { PersonaSwitch } from "./components/PersonaSwitch";
 function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-indigo-500/30">
+      <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-indigo-500/30 relative overflow-hidden">
+        {/* Static gradient background - lightweight alternative to animated blurs */}
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          <div className="absolute -top-48 -left-48 w-[700px] h-[700px] bg-purple-600/6 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-48 -right-48 w-[700px] h-[700px] bg-indigo-600/6 rounded-full blur-3xl"></div>
+          <div className="absolute -top-48 -right-48 w-[700px] h-[700px] bg-indigo-600/6 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-48 -left-48 w-[700px] h-[700px] bg-purple-600/6 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-pink-600/6 rounded-full blur-3xl"></div>
+        </div>
+
         <main className="relative z-10 min-h-screen flex flex-col">
           <Routes>
             <Route path="/personal" element={<PersonalPortfolio />} />
