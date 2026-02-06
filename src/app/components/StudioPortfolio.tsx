@@ -63,9 +63,9 @@ export function StudioPortfolio() {
 
         {/* Social Buttons */}
         <div className="flex flex-wrap gap-3 sm:gap-4 justify-center">
-          <SocialButton icon={<Mail size={20} />} label="Contact Us" href={`mailto:${studioData.contact.email}`} />
           <SocialButton icon={<SiGithub size={20} />} label="GitHub" href={studioData.social.github} />
           <SocialButton icon={<SiLinkedin size={20} />} label="LinkedIn" href={studioData.social.linkedin} />
+          <SocialButton icon={<Mail size={20} />} label="Contact Us" href={`mailto:${studioData.contact.email}`} />
           <SocialButton icon={<SiGoogleplay size={20} />} label="Play Store" href={studioData.social.playstore} />
         </div>
       </motion.div>
