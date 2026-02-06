@@ -38,7 +38,7 @@ export function StudioPortfolio() {
       variants={container}
       initial="hidden"
       animate="show"
-      className="max-w-5xl mx-auto px-6 py-24 pb-32"
+      className="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24 pb-24 sm:pb-32"
     >
       {/* Hero Section */}
       <motion.div variants={item} className="text-center mb-32">
@@ -48,21 +48,21 @@ export function StudioPortfolio() {
             <img
               src={studioData.studio.logo}
               alt="Mostly Works Studio"
-              className="relative w-48 h-48 rounded-full border-2 border-white/10 shadow-2xl"
+              className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full border-2 border-white/10 shadow-2xl"
             />
           </div>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white mb-4 sm:mb-6 tracking-tight sm:tracking-tighter">
           {studioData.studio.name.split(" ").slice(0, 2).join(" ")} <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 pr-1">{studioData.studio.name.split(" ")[2]}</span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto font-light leading-relaxed mb-10">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-400 max-w-3xl mx-auto font-light leading-relaxed mb-8 sm:mb-10 px-2">
           {studioData.studio.tagline}. <span className="text-white font-medium">{studioData.studio.description}</span>
         </p>
 
         {/* Social Buttons */}
-        <div className="flex gap-4 justify-center">
+        <div className="flex flex-wrap gap-3 sm:gap-4 justify-center">
           <SocialButton icon={<Mail size={20} />} label="Contact Us" href={`mailto:${studioData.contact.email}`} />
           <SocialButton icon={<SiGithub size={20} />} label="GitHub" href={studioData.social.github} />
           <SocialButton icon={<SiLinkedin size={20} />} label="LinkedIn" href={studioData.social.linkedin} />

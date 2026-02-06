@@ -76,7 +76,7 @@ export function PersonalPortfolio() {
       variants={container}
       initial="hidden"
       animate="show"
-      className="max-w-5xl mx-auto px-6 py-24 pb-32"
+      className="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24 pb-24 sm:pb-32"
     >
       {/* Hero Section */}
       <motion.div variants={item} className="flex flex-col md:flex-row gap-10 items-center mb-32">
@@ -85,7 +85,7 @@ export function PersonalPortfolio() {
           <img
             src={personalData.profile.image}
             alt="Profile"
-            className="relative w-48 h-48 object-cover rounded-full border-2 border-white/10 shadow-2xl"
+            className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 object-cover rounded-full border-2 border-white/10 shadow-2xl"
           />
         </div>
 
@@ -95,15 +95,15 @@ export function PersonalPortfolio() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <h1 className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-500 mb-4 tracking-tighter">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-500 mb-4 tracking-tight sm:tracking-tighter">
               {personalData.profile.name}
             </h1>
-            <p className="text-xl text-indigo-400 mb-6 font-medium flex items-center justify-center md:justify-start gap-2">
+            <p className="text-base sm:text-lg md:text-xl text-indigo-400 mb-6 font-medium flex items-center justify-center md:justify-start gap-2">
               <BriefcaseBusiness size={20} /> {personalData.profile.title}
             </p>
           </motion.div>
 
-          <div className="flex flex-wrap gap-6 justify-center md:justify-start text-sm text-zinc-400 mb-8">
+          <div className="flex flex-wrap gap-3 sm:gap-6 justify-center md:justify-start text-sm text-zinc-400 mb-8">
             <motion.a
               initial={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
               whileHover={{ backgroundColor: "rgba(99, 102, 241, 0.2)", scale: 1.05 }}
@@ -137,7 +137,7 @@ export function PersonalPortfolio() {
             </motion.a>
           </div>
 
-          <div className="flex gap-4 justify-center md:justify-start">
+          <div className="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
             <SocialButton icon={<SiGithub size={20} />} label="GitHub" href={personalData.social.github} />
             <SocialButton icon={<SiLinkedin size={20} />} label="LinkedIn" href={personalData.social.linkedin} />
             <SocialButton icon={<SiLeetcode size={20} />} label="LeetCode" href={personalData.social.leetcode} />
