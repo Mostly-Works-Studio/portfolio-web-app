@@ -14,7 +14,7 @@ export function PersonaSwitch() {
   }, [location.pathname]);
 
   return (
-    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 p-1 rounded-full bg-zinc-900/20 backdrop-blur-xl border border-white/10 shadow-2xl shadow-indigo-500/10">
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 p-1 rounded-full bg-zinc-900/20 backdrop-blur-xl border border-white/10">
       <button
         onClick={() => {
           navigate("/personal");
@@ -29,7 +29,7 @@ export function PersonaSwitch() {
         {mode === "personal" && (
           <motion.div
             layoutId="active-pill"
-            className="absolute inset-0 bg-gradient-to-r from-indigo-600/60 to-purple-600/60 rounded-full -z-10 shadow-lg shadow-indigo-500/50 backdrop-blur-md"
+            className="absolute inset-0 bg-gradient-to-r from-indigo-600/50 to-purple-600/50 rounded-full -z-10 backdrop-blur-md"
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           />
         )}
@@ -51,7 +51,7 @@ export function PersonaSwitch() {
         {mode === "studio" && (
           <motion.div
             layoutId="active-pill"
-            className="absolute inset-0 bg-gradient-to-r from-purple-600/60 to-pink-600/60 rounded-full -z-10 shadow-lg shadow-purple-500/50 backdrop-blur-md"
+            className="absolute inset-0 bg-gradient-to-r from-purple-600/50 to-pink-600/50 rounded-full -z-10 backdrop-blur-md"
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           />
         )}
