@@ -41,7 +41,7 @@ export function StudioPortfolio() {
       className="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24 pb-24 sm:pb-32"
     >
       {/* Hero Section */}
-      <motion.div variants={item} className="text-center mb-32">
+      <motion.div variants={item} className="text-center mb-16 md:mb-32">
         <div className="inline-flex items-center justify-center mb-8">
           <div className="relative">
             <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 rounded-full blur opacity-75"></div>
